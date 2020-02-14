@@ -1,6 +1,6 @@
 console.log("hello");
 
-const menuBtn = document.querySelector(".menu-button");
+const menuBtn = document.querySelector("#nav-icon-container");
 const nav = document.querySelector("nav");
 
 menuBtn.addEventListener("click", () => {
