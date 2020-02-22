@@ -21,7 +21,7 @@
 		position: relative;
 		text-align: center;
 		padding: 2rem;
-		font-size: 6.5rem;
+		font-size: 8rem;
 
 		filter: drop-shadow(15px 15px 20px rgba(0, 0, 0, 0.75));
 		animation: name-in 2s ease-out both;
@@ -47,7 +47,7 @@
 		animation: glow 1s ease-in-out infinite alternate;
 	}
 	@media only screen and (max-width: 600px) {
-		margin-top: 25vh;
+		margin-top: 5vh;
 		h1 {
 			font-size: 4rem;
 		}
@@ -58,14 +58,16 @@
 	text-align: center;
 }
 body {
+	width: 100vw;
 	position: relative;
-	background-image: url(../background.png);
+	background-image: url(../background.svg);
 	background-size: 100%;
 	background-repeat: no-repeat;
 	background-attachment: fixed;
 	background-size: cover;
 	height: 100%;
 	z-index: -10;
+	overflow-x: hidden;
 
 	&:after {
 		content: '';
@@ -82,7 +84,7 @@ body {
 }
 
 body.faded::after {
-	opacity: 1;
+	opacity: 0.5;
 }
 
 * {
@@ -92,6 +94,7 @@ body.faded::after {
 }
 
 .content {
+	font-size: 24px;
 	width: 80%;
 	margin: 5vh auto 0 auto;
 	color: white;

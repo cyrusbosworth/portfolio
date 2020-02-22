@@ -23,7 +23,6 @@ function fade(scroll_pos) {
 	} else {
 		bgCover.classList.remove('faded');
 	}
-	console.log(scroll_pos);
 }
 
 window.addEventListener('scroll', function(e) {

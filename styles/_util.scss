@@ -1,7 +1,7 @@
 $orange: rgb(255, 168, 0);
 $purple: rgb(158, 0, 255);
 $pink: #cc4f87;
-$background: #0e0834;
+$background: #090520;
 
 @font-face {
 	font-family: 'Dead Stock';
@@ -38,11 +38,11 @@ $background: #0e0834;
 @keyframes name-in {
 	0% {
 		opacity: 0;
-		bottom: 50px;
+		transform: translateY(-50px);
 	}
 
 	100% {
 		opacity: 1;
-		bottom: 0;
+		transform: translateY(0);
 	}
 }
