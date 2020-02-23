@@ -86,6 +86,7 @@
   -webkit-transition: opacity 0.5s ease-in-out 0.1s;
   transition: opacity 0.5s ease-in-out 0.1s;
   cursor: pointer;
+  z-index: 1;
 }
 
 #nav-icon-container::after {
@@ -98,8 +99,8 @@
   left: 0;
   -webkit-transition: opacity 500ms;
   transition: opacity 500ms;
-  background: -webkit-gradient(linear, left top, right top, from(#ffa800), color-stop(5%, #ffa800), to(#9e00ff));
-  background: linear-gradient(90deg, #ffa800 0%, #ffa800 5%, #9e00ff 100%);
+  background: -webkit-gradient(linear, left top, left bottom, from(#ffa800), color-stop(5%, #ffa800), to(#9e00ff));
+  background: linear-gradient(180deg, #ffa800 0%, #ffa800 5%, #9e00ff 100%);
   border-radius: 50%;
   z-index: -1;
 }
@@ -160,13 +161,13 @@
 }
 
 #nav-icon span:nth-child(odd)::after {
-  background: -webkit-gradient(linear, left top, right top, from(#ffa800), color-stop(5%, #ffa800), to(#9e00ff));
-  background: linear-gradient(90deg, #ffa800 0%, #ffa800 5%, #9e00ff 100%);
+  background: -webkit-gradient(linear, left top, right top, from(#ffa800), to(#9e00ff));
+  background: linear-gradient(90deg, #ffa800 0%, #9e00ff 100%);
 }
 
 #nav-icon span:nth-child(even)::after {
-  background: -webkit-gradient(linear, right top, left top, from(#ffa800), color-stop(5%, #ffa800), to(#9e00ff));
-  background: linear-gradient(270deg, #ffa800 0%, #ffa800 5%, #9e00ff 100%);
+  background: -webkit-gradient(linear, right top, left top, from(#ffa800), to(#9e00ff));
+  background: linear-gradient(270deg, #ffa800 0%, #9e00ff 100%);
 }
 
 #nav-icon span:nth-child(even) {
@@ -328,8 +329,8 @@ nav::after {
   left: 0;
   opacity: 0;
   top: 100%;
-  -webkit-transition: all 1s 0.2s;
-  transition: all 1s 0.2s;
+  -webkit-transition: all 1s;
+  transition: all 1s;
   background: -webkit-gradient(linear, left top, right top, from(#ffa800), color-stop(5%, #ffa800), to(#9e00ff));
   background: linear-gradient(90deg, #ffa800 0%, #ffa800 5%, #9e00ff 100%);
 }
@@ -350,13 +351,15 @@ nav .nav-items {
       justify-content: space-around;
   padding-left: 2rem;
   position: relative;
-  left: 100%;
-  -webkit-transition: left 1s;
-  transition: left 1s;
+  -webkit-transform: translateX(100%);
+          transform: translateX(100%);
+  -webkit-transition: all 1s;
+  transition: all 1s;
 }
 
 nav .nav-items.open {
-  left: 0%;
+  -webkit-transform: translateX(0);
+          transform: translateX(0);
 }
 
 nav .nav-items li {
@@ -389,11 +392,168 @@ nav .nav-items li:hover {
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
-    left: 150%;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
+  }
+}
+
+@font-face {
+  font-family: 'Dead Stock';
+  src: url("fonts/DeadStock.ttf");
+}
+
+@font-face {
+  font-family: 'Pixel';
+  src: url("fonts/pixel.ttf");
+}
+
+@keyframes glow {
+  0% {
+    text-shadow: none;
+  }
+  100% {
+    text-shadow: 0px 0px 15px rgba(255, 255, 255, 0.7);
+  }
+}
+
+@keyframes glow-hover {
+  0% {
+    text-shadow: none;
+  }
+  100% {
+    text-shadow: 0px 0px 20px white;
+  }
+}
+
+@keyframes name-in {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(-50px);
+            transform: translateY(-50px);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+}
+
+section.about {
+  position: relative;
+  z-index: 5;
+  width: 75%;
+  margin: 10vh auto;
+  display: -ms-grid;
+  display: grid;
+}
+
+section.about p {
+  padding: 6rem;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 300;
+  color: white;
+  font-size: 1.25rem;
+  line-height: 150%;
+}
+
+.about-me-title {
+  margin-right: 5rem;
+  -ms-grid-column-align: right;
+      justify-self: right;
+  position: relative;
+  font-family: Pixel;
+  color: white;
+  font-size: 4rem;
+  font-weight: 100;
+  text-align: center;
+  width: 20rem;
+}
+
+.about-me-title::after {
+  content: '';
+  position: absolute;
+  height: 50%;
+  width: 100%;
+  left: 0;
+  top: 50%;
+  background: -webkit-gradient(linear, left top, right top, from(#ffa800), to(#9e00ff));
+  background: linear-gradient(90deg, #ffa800 0%, #9e00ff 100%);
+  opacity: 0.75;
+  z-index: -1;
+}
+
+.corner1 {
+  position: relative;
+  height: 7px;
+  outline: 1px solid rgba(158, 0, 255, 0.7);
+  width: 33%;
+}
+
+.corner1::after {
+  content: '';
+  position: absolute;
+  width: 7px;
+  z-index: -1;
+  outline: 1px solid rgba(255, 168, 0, 0.7);
+  height: 24rem;
+}
+
+.corner2 {
+  -ms-grid-column-align: right;
+      justify-self: right;
+  position: relative;
+  height: 7px;
+  outline: 1px solid rgba(158, 0, 255, 0.7);
+  width: 66%;
+}
+
+.corner2::after {
+  content: '';
+  right: 0;
+  bottom: 0;
+  position: absolute;
+  width: 7px;
+  z-index: -1;
+  outline: 1px solid rgba(255, 168, 0, 0.7);
+  height: 24rem;
+}
+
+@media only screen and (max-width: 1000px) {
+  section.about {
+    width: 90%;
+    margin: 10vh auto;
+    display: -ms-grid;
+    display: grid;
+  }
+  section.about p {
+    position: relative;
+    margin-top: 3rem;
+    padding: 0rem 3rem 3rem 3rem;
+    font-size: 1rem;
+    line-height: 140%;
+    border-left: 1px solid rgba(158, 0, 255, 0.7);
+    border-right: 1px solid rgba(158, 0, 255, 0.7);
+  }
+  section.about p::after {
+    content: '';
+    top: 0px;
+    position: absolute;
+    left: 5px;
+    right: 5px;
+    bottom: 5px;
+    border-left: 1px solid rgba(204, 79, 135, 0.7);
+    border-right: 1px solid rgba(204, 79, 135, 0.7);
+  }
+  .about-me-title {
+    margin: 0 auto;
+    font-size: 3rem;
+    width: 15rem;
+  }
+  .corner1,
+  .corner2 {
+    display: none;
   }
 }
 
@@ -412,6 +572,7 @@ nav .nav-items li:hover {
 }
 
 .hero {
+  z-index: 5;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -476,14 +637,14 @@ nav .nav-items li:hover {
 body {
   width: 100vw;
   position: relative;
-  background-image: url(../background.svg);
+  background-image: url(../background.png);
   background-size: 100%;
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: cover;
   height: 100%;
-  z-index: -10;
   overflow-x: hidden;
+  background-color: #090520;
 }
 
 body:after {
@@ -494,7 +655,7 @@ body:after {
   left: 0;
   height: 100%;
   width: 100%;
-  z-index: -5;
+  z-index: 1;
   opacity: 0;
   -webkit-transition: opacity 0.6s;
   transition: opacity 0.6s;

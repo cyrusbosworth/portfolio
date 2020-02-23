@@ -1,0 +1,120 @@
+@import 'util';
+
+section.about {
+	position: relative;
+	z-index: 5;
+	width: 75%;
+	margin: 10vh auto;
+	display: grid;
+
+	p {
+		padding: 6rem;
+		font-family: 'Roboto', sans-serif;
+		font-weight: 300;
+		color: white;
+		font-size: 1.25rem;
+		line-height: 150%;
+	}
+}
+
+.about-me-title {
+	margin-right: 5rem;
+	justify-self: right;
+	position: relative;
+	font-family: Pixel;
+	color: white;
+	font-size: 4rem;
+	font-weight: 100;
+
+	text-align: center;
+	width: 20rem;
+
+	&::after {
+		content: '';
+		position: absolute;
+		height: 50%;
+		width: 100%;
+		left: 0;
+		top: 50%;
+
+		@include gradient(90deg);
+		opacity: 0.75;
+		z-index: -1;
+	}
+}
+
+.corner1 {
+	position: relative;
+	height: 7px;
+	outline: 1px solid rgba($purple, 0.7);
+	width: 33%;
+
+	&::after {
+		content: '';
+
+		position: absolute;
+		width: 7px;
+		z-index: -1;
+		outline: 1px solid rgba($orange, 0.7);
+		height: 24rem;
+	}
+}
+
+.corner2 {
+	justify-self: right;
+	position: relative;
+	height: 7px;
+	outline: 1px solid rgba($purple, 0.7);
+	width: 66%;
+
+	&::after {
+		content: '';
+		right: 0;
+		bottom: 0;
+		position: absolute;
+		width: 7px;
+		z-index: -1;
+		outline: 1px solid rgba($orange, 0.7);
+		height: 24rem;
+	}
+}
+
+@media only screen and (max-width: 1000px) {
+	section.about {
+		width: 90%;
+		margin: 10vh auto;
+		display: grid;
+
+		p {
+			position: relative;
+			margin-top: 3rem;
+			padding: 0rem 3rem 3rem 3rem;
+			font-size: 1rem;
+			line-height: 140%;
+
+			border-left: 1px solid rgba($purple, 0.7);
+			border-right: 1px solid rgba($purple, 0.7);
+			&::after {
+				content: '';
+				top: 0px;
+				position: absolute;
+				left: 5px;
+				right: 5px;
+				bottom: 5px;
+
+				border-left: 1px solid rgba($pink, 0.7);
+				border-right: 1px solid rgba($pink, 0.7);
+			}
+		}
+	}
+
+	.about-me-title {
+		margin: 0 auto;
+		font-size: 3rem;
+		width: 15rem;
+	}
+	.corner1,
+	.corner2 {
+		display: none;
+	}
+}
