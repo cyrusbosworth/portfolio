@@ -2,6 +2,13 @@
 @import 'util';
 @import 'nav';
 @import 'about';
+@import 'skills';
+
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
 
 .front-page-container {
 	height: 100vh;
@@ -38,7 +45,7 @@
 		font-weight: 100;
 		font-family: Pixel, sans-serif;
 		color: white;
-		font-size: 2rem;
+		font-size: 3rem;
 		text-shadow: 0px 0px 0px rgba(255, 255, 255, 0.3);
 
 		text-transform: uppercase;
@@ -54,14 +61,10 @@
 	}
 }
 
-.name {
-	text-align: center;
-}
-
 body {
 	width: 100vw;
 	position: relative;
-	background-image: url(../background.png);
+	background-image: url(../images/background.png);
 	background-size: 100%;
 	background-repeat: no-repeat;
 	background-attachment: fixed;
@@ -87,23 +90,4 @@ body {
 
 body.faded::after {
 	opacity: 0.5;
-}
-
-* {
-	box-sizing: border-box;
-	margin: 0;
-	padding: 0;
-}
-
-.content {
-	font-size: 24px;
-	width: 80%;
-	margin: 5vh auto 0 auto;
-	color: white;
-}
-
-.content2 {
-	width: 80%;
-	margin: 100vh auto;
-	color: white;
 }

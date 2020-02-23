@@ -15,6 +15,9 @@ section.about {
 		font-size: 1.25rem;
 		line-height: 150%;
 	}
+	hr {
+		display: none;
+	}
 }
 
 .about-me-title {
@@ -25,6 +28,7 @@ section.about {
 	color: white;
 	font-size: 4rem;
 	font-weight: 100;
+	text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.9);
 
 	text-align: center;
 	width: 20rem;
@@ -105,6 +109,16 @@ section.about {
 				border-left: 1px solid rgba($pink, 0.7);
 				border-right: 1px solid rgba($pink, 0.7);
 			}
+		}
+		hr {
+			border: none;
+			margin: 0 auto;
+			display: block;
+			height: 5px;
+			opacity: 0.75;
+			@include gradient(90deg);
+
+			width: 50%;
 		}
 	}
 

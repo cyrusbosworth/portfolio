@@ -1,0 +1,117 @@
+@import 'util';
+
+#skills {
+	width: 85%;
+	margin: 5vh auto;
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: space-evenly;
+	position: relative;
+	z-index: 5;
+	svg {
+		height: 150px;
+		margin-bottom: 1.5rem;
+		path {
+			fill: linear-gradient(from black to white);
+		}
+	}
+	img {
+		height: 150px;
+		margin: 1.5rem auto;
+	}
+
+	.skill {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		margin: 0 2rem 2rem 2rem;
+		.title {
+			@media only screen and (max-width: 1000px) {
+				width: 90vw;
+			}
+			position: relative;
+			font-family: Pixel;
+			color: white;
+			font-size: 4rem;
+			font-weight: 100;
+			text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.9);
+
+			text-align: center;
+			width: 20rem;
+			&::after {
+				content: '';
+				position: absolute;
+				height: 50%;
+				width: 100%;
+				left: 0;
+				top: 50%;
+
+				//@include gradient(90deg);
+				opacity: 0.75;
+				z-index: -1;
+			}
+		}
+
+		li {
+			font-size: 24px;
+			margin: 1rem 1rem;
+			font-family: Roboto;
+			color: white;
+			list-style: none;
+			position: relative;
+			&::after {
+				content: '';
+				width: 0.5rem;
+				height: 0.5rem;
+				position: absolute;
+				left: -1rem;
+				top: 0.75rem;
+				//	background-color: white;
+			}
+
+			@media only screen and (max-width: 1000px) {
+				margin: 2rem 1rem;
+				&:after {
+					content: none;
+				}
+			}
+		}
+	}
+}
+
+.fe::after {
+	background: linear-gradient(90deg, $orange 0%, $stop1 100%);
+}
+.be::after {
+	background: linear-gradient(90deg, $stop1 0%, $stop2 100%);
+}
+.de::after {
+	background: linear-gradient(90deg, $stop2 0%, $purple 100%);
+}
+
+div.skill:nth-of-type(1) {
+	li::after {
+		background-color: $orange;
+	}
+}
+div.skill:nth-of-type(2) {
+	li::after {
+		background-color: $pink;
+	}
+}
+div.skill:nth-of-type(3) {
+	li::after {
+		background-color: $purple;
+	}
+}
+
+@media only screen and (max-width: 1000px) {
+	ul {
+		width: 100%;
+		justify-content: center;
+		display: grid;
+		grid-template-rows: repeat(5, 5rem);
+		grid-auto-flow: column;
+	}
+}
