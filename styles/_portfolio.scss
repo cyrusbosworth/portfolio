@@ -1,0 +1,65 @@
+@import 'util';
+:root {
+	--port-width: 20rem;
+	--port-height: 12rem;
+	--port-text: 1rem;
+}
+#portfolio {
+	position: relative;
+	z-index: 5;
+	width: 75%;
+	margin: 5vh auto;
+	font-family: 'Montserrat', sans-serif;
+	display: flex;
+	justify-content: center;
+	flex-wrap: wrap;
+}
+
+.port-item {
+	margin: 1rem;
+	display: inline-block;
+	border: 1px solid rgba(white, 0.5);
+	padding: 1rem;
+
+	.port-image {
+		width: var(--port-width);
+		height: var(--port-height);
+		background-image: url(../images/biblio.png);
+		font-size: var(--port-text);
+		background-size: cover;
+		display: grid;
+		justify-content: end;
+		align-content: end;
+
+		img {
+			height: 1.5rem;
+			margin: 10px;
+			filter: drop-shadow(2px 2px 1px black);
+		}
+	}
+
+	.port-text {
+		line-height: 140%;
+		.port-text-name {
+			font-weight: 500;
+			font-size: 1.5em;
+			margin-bottom: 1rem;
+		}
+		.port-text-desc {
+			font-size: var(--port-text);
+		}
+		color: white;
+		padding: 1rem;
+		margin-top: 1rem;
+		border: 1px solid rgba(white, 0.5);
+		width: var(--port-width);
+	}
+}
+
+@media only screen and (max-width: 600px) {
+	:root {
+		--port-width: 18rem;
+		--port-height: 11rem;
+		--port-text: 0.7rem;
+	}
+}

@@ -1,0 +1,36 @@
+@import 'util';
+
+.container {
+	z-index: 5;
+}
+.headline {
+	z-index: 5;
+	position: relative;
+	margin: 2rem auto;
+	width: 75%;
+	font-family: 'Montserrat', sans-serif;
+	font-weight: 500;
+	font-size: 6rem;
+	@media only screen and (max-width: 1000px) {
+		width: 100%;
+		font-size: 4rem;
+	}
+}
+div.headline-skills {
+	-webkit-text-stroke: 2px $purple;
+	-moz-text-stroke: 2px $purple;
+	@media only screen and (max-width: 1000px) {
+		text-align: center;
+	}
+}
+
+div.headline-portfolio {
+	-webkit-text-stroke: 2px $pink;
+	-moz-text-stroke: 2px $pink;
+	text-align: right;
+	padding-right: 3rem;
+	@media only screen and (max-width: 1000px) {
+		text-align: center;
+		padding: 0;
+	}
+}
