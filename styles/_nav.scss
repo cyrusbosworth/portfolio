@@ -41,7 +41,9 @@ nav {
 		&.open {
 			transform: translateX(0);
 		}
+
 		li {
+			color: white;
 			text-transform: uppercase;
 			transition: color 500ms;
 

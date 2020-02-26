@@ -34,3 +34,12 @@ div.headline-portfolio {
 		padding: 0;
 	}
 }
+
+div.headline-contact {
+	-webkit-text-stroke: 2px $orange;
+	-moz-text-stroke: 2px $orange;
+
+	@media only screen and (max-width: 1000px) {
+		text-align: center;
+	}
+}

@@ -11,6 +11,12 @@
 	margin: 0;
 	padding: 0;
 }
+html {
+	scroll-behavior: smooth;
+}
+a {
+	text-decoration: none;
+}
 
 .front-page-container {
 	height: 100vh;
@@ -55,8 +61,42 @@
 		text-align: center;
 		animation: glow 1s ease-in-out infinite alternate;
 	}
+
+	.cta {
+		position: relative;
+		padding: 1rem 3rem;
+		background: linear-gradient($orange 0%, $stop1 100%);
+		font-family: Pixel;
+		color: white;
+		margin-top: 5rem;
+		font-size: 4rem;
+		@media screen and (max-width: 600px) {
+			font-size: 2.5rem;
+		}
+		border: none;
+		z-index: 0;
+		&:after {
+			content: '';
+			position: absolute;
+			height: 100%;
+			width: 100%;
+			top: 0;
+			left: 0;
+			z-index: 1;
+			background: linear-gradient($purple 0%, $stop2 100%);
+			opacity: 0;
+			transition: opacity 1s;
+		}
+
+		&:hover::after {
+			opacity: 1;
+		}
+		span {
+			position: relative;
+			z-index: 5;
+		}
+	}
 	@media only screen and (max-width: 600px) {
-		//margin-top: 5vh;
 		h1 {
 			font-size: 4rem;
 		}
@@ -74,11 +114,10 @@ body {
 	@media screen and (orientation: portrait) {
 		background-image: url(../images/background-p.png);
 	}
-	//background-size: 100%;
+
 	background-repeat: no-repeat;
 	background-attachment: fixed;
 	background-size: cover;
-	//height: 100%;
 
 	overflow-x: hidden;
 	background-color: $background;
@@ -93,7 +132,7 @@ body {
 		width: 100%;
 		z-index: 1;
 		opacity: 0.3;
-		transition: opacity 1s;
+		transition: opacity 0.6s;
 	}
 }
 

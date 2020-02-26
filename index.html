@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" id="top">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -20,7 +20,6 @@
 
     <div id="nav-icon-container">
       <div id="nav-icon">
-        
         <span></span>
         <span></span>
         <span></span>
@@ -31,27 +30,28 @@
       </div>
     </div>
     <div class="nav-items">
-     
-        
-        <li>home</li>
-        <li>about</li>
-        <li>technology</li>
-        <li>portfolio</li>
-        <li>contact</li>
+    
+        <a href="#top"><li>home</li></a>
+        <a href="#about"><li>about</li></a>
+        <a href="#skills"><li>technology</li></a>
+        <a href="#portfolio"><li>portfolio</li></a>
+        <a href="#contact"><li>contact</li></a>
 
-      
     </div>
   </nav>
   <div class="front-page-container">
 
     <div class="hero">
 
-      <h1>
+      <a href="#about"><h1>
         <span>Cyrus</span>
         <span>Bosworth</span>
         <span>Kurtz</span>
-      </h1>
-      <h2>Full Stack Developer and Designer_</h2>
+      </h1></a>
+      <a href="#skills"><h2>Full Stack Developer and Designer_</h2></a>
+      <a href="#portfolio"><button class="cta"><span>Let's Go</span>
+       
+      </button></a>
 
     </div>
 
@@ -65,10 +65,10 @@
     <hr>
   </section>
 
-  <div class="headline headline-skills">Skills</div>
+  <div id="skills" class="headline headline-skills">Skills</div>
 
 
-   <section id = "skills">
+   <section class = "skills">
     
     <div class="skill">
       <img src ='images/react.svg'>
@@ -117,18 +117,13 @@
       </ul>
     </div>
    </section>
-   <div class="headline headline-portfolio">Portfolio</div>
+   <div id="portfolio" class="headline headline-portfolio">Portfolio</div>
 
-   <section id="portfolio">
+   <section class="portfolio">
 
-    <div class="port-item">
-      <div class="port-image">
-        <div class="link-container">
-
-        <img src="images/code.svg">
-        <img src="images/link.svg">
-
-        </div>
+    <div class="port-item" >
+      <div class="port-image" style="background-image: url(../images/biblio.png)">
+        
         
       </div>
 
@@ -138,99 +133,110 @@
         </div>
         <div class="port-text-desc">
           Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ratione illo quis at vero, cupiditate fugit vel earum aliquam dignissimos doloribus.
+        </div>
+        <div class="link-container">
+
+         <a href="#"><img src="images/code.svg"></a>
+         <a href="#"><img src="images/link.svg"></a>
+  
         </div>
 
       </div>
     </div>
 
-    <div class="port-item">
-      <div class="port-image">
-        <div class="link-container">
-
-        <img src="images/code.svg">
-        <img src="images/link.svg">
-
-        </div>
+    <div class="port-item" >
+      <div class="port-image" style="background-image: url(../images/soc.png)">
+     
         
       </div>
 
       <div class="port-text">
         <div class="port-text-name">
-          Biblio
+          Social Media Project
         </div>
         <div class="port-text-desc">
           Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ratione illo quis at vero, cupiditate fugit vel earum aliquam dignissimos doloribus.
         </div>
+        <div class="link-container">
 
+          <a href="#"><img src="images/code.svg"></a>
+          <a href="#"><img src="images/link.svg"></a>
+        </div>
       </div>
     </div>
 
     <div class="port-item">
-      <div class="port-image">
-        <div class="link-container">
-
-        <img src="images/code.svg">
-        <img src="images/link.svg">
-
-        </div>
+      <div class="port-image" style="background-image: url(../images/bacc.png)" >
+      
         
       </div>
 
       <div class="port-text">
         <div class="port-text-name">
-          Biblio
+          Baccarat
         </div>
         <div class="port-text-desc">
           Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ratione illo quis at vero, cupiditate fugit vel earum aliquam dignissimos doloribus.
         </div>
+        <div class="link-container">
 
+          <a href="#"><img src="images/code.svg"></a>
+          <a href="#"><img src="images/link.svg"></a>
+        </div>
       </div>
     </div>
 
     <div class="port-item">
-      <div class="port-image">
-        <div class="link-container">
-
-        <img src="images/code.svg">
-        <img src="images/link.svg">
-
-        </div>
+      <div class="port-image" style="background-image: url(../images/search.png)" >
+        
         
       </div>
 
       <div class="port-text">
         <div class="port-text-name">
-          Biblio
+          Image Search
         </div>
         <div class="port-text-desc">
           Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ratione illo quis at vero, cupiditate fugit vel earum aliquam dignissimos doloribus.
+        </div>
+        <div class="link-container">
+          <a href="#"><img src="images/code.svg"></a>
+          <a href="#"><img src="images/link.svg"></a>
+  
         </div>
 
       </div>
     </div>
     <div class="port-item">
-      <div class="port-image">
-        <div class="link-container">
-
-        <img src="images/code.svg">
-        <img src="images/link.svg">
-
-        </div>
+      <div class="port-image" style="background-image: url(../images/port.png)">
+       
         
       </div>
 
       <div class="port-text">
         <div class="port-text-name">
-          Biblio
+          Portfolio
         </div>
         <div class="port-text-desc">
           Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ratione illo quis at vero, cupiditate fugit vel earum aliquam dignissimos doloribus.
+        </div>
+        <div class="link-container">
+
+          <a href="#"><img src="images/code.svg"></a>
+          <a href="#"><img src="images/link.svg"></a>
         </div>
 
       </div>
     </div>
    </section>
 
+   <div class="headline headline-contact">Contact Me</div>
+
+   <section class="contact">
+
+
+    
+   </section>
 
  
   </body>

@@ -3,6 +3,7 @@ const nav = document.querySelector('.nav-items');
 const nav2 = document.querySelector('nav');
 const bgCover = document.querySelector('body');
 const typewriter = document.querySelector('.hero h2');
+const navButtons = document.querySelectorAll('.nav-items a');
 
 menuBtn.addEventListener('click', () => {
 	console.log('clicked');
@@ -11,32 +12,14 @@ menuBtn.addEventListener('click', () => {
 	nav2.classList.toggle('open');
 });
 
-//Background fade
-// console.log(bgCover);
-// let last_known_scroll_position = 0;
-// let ticking = false;
-
-// function fade(scroll_pos) {
-// 	if (scroll_pos > 125) {
-// 		bgCover.classList.add('faded');
-// 		console.log(bgCover);
-// 	} else {
-// 		bgCover.classList.remove('faded');
-// 	}
-// }
-
-// window.addEventListener('scroll', function(e) {
-// 	last_known_scroll_position = window.scrollY;
-
-// 	if (!ticking) {
-// 		window.requestAnimationFrame(function() {
-// 			fade(last_known_scroll_position);
-// 			ticking = false;
-// 		});
-
-// 		ticking = true;
-// 	}
-// });
+navButtons.forEach(button => {
+	button.addEventListener('click', () => {
+		console.log('lickeng');
+		menuBtn.classList.remove('open');
+		nav.classList.remove('open');
+		nav2.classList.remove('open');
+	});
+});
 
 //Typewriter
 const desc = 'full stack developer and designer'.split('');

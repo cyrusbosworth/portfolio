@@ -363,6 +363,7 @@ nav .nav-items.open {
 }
 
 nav .nav-items li {
+  color: white;
   text-transform: uppercase;
   -webkit-transition: color 500ms;
   transition: color 500ms;
@@ -613,7 +614,7 @@ section.about hr {
   }
 }
 
-#skills {
+section.skills {
   width: 85%;
   margin: 5vh auto;
   display: -webkit-box;
@@ -631,21 +632,21 @@ section.about hr {
   z-index: 5;
 }
 
-#skills svg {
+section.skills svg {
   height: 150px;
   margin-bottom: 1.5rem;
 }
 
-#skills svg path {
+section.skills svg path {
   fill: linear-gradient(from black to white);
 }
 
-#skills img {
+section.skills img {
   height: 150px;
   margin: 1.5rem auto;
 }
 
-#skills .skill {
+section.skills .skill {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -659,7 +660,7 @@ section.about hr {
   margin: 0 2rem 2rem 2rem;
 }
 
-#skills .skill .title {
+section.skills .skill .title {
   position: relative;
   font-family: Pixel;
   color: white;
@@ -671,12 +672,12 @@ section.about hr {
 }
 
 @media only screen and (max-width: 1000px) {
-  #skills .skill .title {
+  section.skills .skill .title {
     width: 90vw;
   }
 }
 
-#skills .skill .title::after {
+section.skills .skill .title::after {
   content: '';
   position: absolute;
   height: 50%;
@@ -687,7 +688,7 @@ section.about hr {
   z-index: -1;
 }
 
-#skills .skill li {
+section.skills .skill li {
   font-size: 24px;
   margin: 1rem 1rem;
   font-family: 'Montserrat', sans;
@@ -696,7 +697,7 @@ section.about hr {
   position: relative;
 }
 
-#skills .skill li::after {
+section.skills .skill li::after {
   content: '';
   width: 0.5rem;
   height: 0.5rem;
@@ -706,7 +707,7 @@ section.about hr {
 }
 
 @media only screen and (max-width: 1000px) {
-  #skills .skill li {
+  section.skills .skill li {
     margin: 2rem 1rem;
     font-size: 18px;
   }
@@ -840,6 +841,17 @@ div.headline-portfolio {
   }
 }
 
+div.headline-contact {
+  -webkit-text-stroke: 2px #ffa800;
+  -moz-text-stroke: 2px #ffa800;
+}
+
+@media only screen and (max-width: 1000px) {
+  div.headline-contact {
+    text-align: center;
+  }
+}
+
 @font-face {
   font-family: 'Dead Stock';
   src: url("fonts/DeadStock.ttf");
@@ -882,12 +894,12 @@ div.headline-portfolio {
 }
 
 :root {
-  --port-width: 20rem;
+  --port-width: 21rem;
   --port-height: 12rem;
   --port-text: 1rem;
 }
 
-#portfolio {
+section.portfolio {
   position: relative;
   z-index: 5;
   width: 75%;
@@ -913,23 +925,8 @@ div.headline-portfolio {
 .port-item .port-image {
   width: var(--port-width);
   height: var(--port-height);
-  background-image: url(../images/biblio.png);
   font-size: var(--port-text);
   background-size: cover;
-  display: -ms-grid;
-  display: grid;
-  -webkit-box-pack: end;
-      -ms-flex-pack: end;
-          justify-content: end;
-  -ms-flex-line-pack: end;
-      align-content: end;
-}
-
-.port-item .port-image img {
-  height: 1.5rem;
-  margin: 10px;
-  -webkit-filter: drop-shadow(2px 2px 1px black);
-          filter: drop-shadow(2px 2px 1px black);
 }
 
 .port-item .port-text {
@@ -951,6 +948,27 @@ div.headline-portfolio {
   font-size: var(--port-text);
 }
 
+.port-item .port-text .link-container {
+  text-align: right;
+}
+
+.port-item .port-text .link-container a {
+  -webkit-transition: -webkit-filter 0.7s;
+  transition: -webkit-filter 0.7s;
+  transition: filter 0.7s;
+  transition: filter 0.7s, -webkit-filter 0.7s;
+}
+
+.port-item .port-text .link-container a:hover {
+  -webkit-filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.8));
+          filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.8));
+}
+
+.port-item .port-text .link-container img {
+  height: 2rem;
+  margin: 0 10px;
+}
+
 @media only screen and (max-width: 600px) {
   :root {
     --port-width: 18rem;
@@ -964,6 +982,14 @@ div.headline-portfolio {
           box-sizing: border-box;
   margin: 0;
   padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+a {
+  text-decoration: none;
 }
 
 .front-page-container {
@@ -1029,6 +1055,49 @@ div.headline-portfolio {
           animation: glow 1s ease-in-out infinite alternate;
 }
 
+.hero .cta {
+  position: relative;
+  padding: 1rem 3rem;
+  background: -webkit-gradient(linear, left top, left bottom, from(#ffa800), to(#c95253));
+  background: linear-gradient(#ffa800 0%, #c95253 100%);
+  font-family: Pixel;
+  color: white;
+  margin-top: 5rem;
+  font-size: 4rem;
+  border: none;
+  z-index: 0;
+}
+
+@media screen and (max-width: 600px) {
+  .hero .cta {
+    font-size: 2.5rem;
+  }
+}
+
+.hero .cta:after {
+  content: '';
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  background: -webkit-gradient(linear, left top, left bottom, from(#9e00ff), to(#ae2c9a));
+  background: linear-gradient(#9e00ff 0%, #ae2c9a 100%);
+  opacity: 0;
+  -webkit-transition: opacity 1s;
+  transition: opacity 1s;
+}
+
+.hero .cta:hover::after {
+  opacity: 1;
+}
+
+.hero .cta span {
+  position: relative;
+  z-index: 5;
+}
+
 @media only screen and (max-width: 600px) {
   .hero h1 {
     font-size: 4rem;
@@ -1065,8 +1134,8 @@ body:after {
   width: 100%;
   z-index: 1;
   opacity: 0.3;
-  -webkit-transition: opacity 1s;
-  transition: opacity 1s;
+  -webkit-transition: opacity 0.6s;
+  transition: opacity 0.6s;
 }
 
 body.faded::after {
