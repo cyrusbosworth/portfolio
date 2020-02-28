@@ -5,6 +5,7 @@
 @import 'skills';
 @import 'headlines';
 @import 'portfolio';
+@import 'contact';
 
 * {
 	box-sizing: border-box;
@@ -107,47 +108,10 @@ a {
 	}
 }
 
-// body {
-// 	width: 100vw;
-// 	position: relative;
-// 	background-image: url(../images/background-l.png);
-// 	@media screen and (orientation: portrait) {
-// 		background-image: url(../images/background-p.png);
-// 	}
-
-// 	background-repeat: no-repeat;
-// 	background-attachment: fixed;
-// 	background-size: cover;
-
-// 	overflow-x: hidden;
-// 	background-color: $background;
-
-// 	&:after {
-// 		content: '';
-// 		position: fixed;
-// 		background-color: $background;
-// 		top: 0;
-// 		left: 0;
-// 		height: 100%;
-// 		width: 100%;
-// 		z-index: 1;
-// 		opacity: 0.3;
-// 		transition: opacity 0.6s;
-// 	}
-// }
-
-// body.faded::after {
-// 	opacity: 0.75;
-// }
-
 body {
-	width: 100vw;
+	width: 100%;
 	position: relative;
 	height: 100%;
-
-	//	background-repeat: no-repeat;
-	//	background-attachment: fixed;
-	//	background-size: cover;
 	background-color: $background;
 	overflow-x: hidden;
 
@@ -183,4 +147,19 @@ body {
 
 body.faded:before {
 	background-color: rgba($background, 0.75);
+}
+
+.end {
+	width: 100%;
+	height: 0.25rem;
+	@include gradient(90deg);
+	opacity: 0.75;
+}
+
+footer {
+	margin: 1rem;
+	width: 100%;
+	color: white;
+	text-align: center;
+	font-family: Montserrat, sans-serif;
 }

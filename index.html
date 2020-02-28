@@ -11,11 +11,6 @@
   </head>
   <body>
 
-
-
-
-
-  
   <nav>
 
     <div id="nav-icon-container">
@@ -66,7 +61,6 @@
   </section>
 
   <div id="skills" class="headline headline-skills">Skills</div>
-
 
    <section class = "skills">
     
@@ -123,8 +117,6 @@
 
     <div class="port-item" >
       <div class="port-image" style="background-image: url(images/biblio.png)">
-        
-        
       </div>
 
       <div class="port-text">
@@ -140,14 +132,11 @@
          <a href="#"><img src="images/link.svg"></a>
   
         </div>
-
       </div>
     </div>
 
     <div class="port-item" >
       <div class="port-image" style="background-image: url(images/soc.png)">
-     
-        
       </div>
 
       <div class="port-text">
@@ -158,7 +147,6 @@
           Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ratione illo quis at vero, cupiditate fugit vel earum aliquam dignissimos doloribus.
         </div>
         <div class="link-container">
-
           <a href="#"><img src="images/code.svg"></a>
           <a href="#"><img src="images/link.svg"></a>
         </div>
@@ -167,8 +155,6 @@
 
     <div class="port-item">
       <div class="port-image" style="background-image: url(images/bacc.png)" >
-      
-        
       </div>
 
       <div class="port-text">
@@ -179,7 +165,6 @@
           Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ratione illo quis at vero, cupiditate fugit vel earum aliquam dignissimos doloribus.
         </div>
         <div class="link-container">
-
           <a href="#"><img src="images/code.svg"></a>
           <a href="#"><img src="images/link.svg"></a>
         </div>
@@ -188,8 +173,6 @@
 
     <div class="port-item">
       <div class="port-image" style="background-image: url(images/search.png)" >
-        
-        
       </div>
 
       <div class="port-text">
@@ -204,13 +187,10 @@
           <a href="#"><img src="images/link.svg"></a>
   
         </div>
-
       </div>
     </div>
     <div class="port-item">
       <div class="port-image" style="background-image: url(images/port.png)">
-       
-        
       </div>
 
       <div class="port-text">
@@ -221,7 +201,6 @@
           Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ratione illo quis at vero, cupiditate fugit vel earum aliquam dignissimos doloribus.
         </div>
         <div class="link-container">
-
           <a href="#"><img src="images/code.svg"></a>
           <a href="#"><img src="images/link.svg"></a>
         </div>
@@ -230,14 +209,35 @@
     </div>
    </section>
 
-   <div class="headline headline-contact">Contact Me</div>
+   <div id="contact" class="headline headline-contact">Contact</div>
 
    <section class="contact">
+  
+      <form class="form-container" action="/contact" method="POST">
+      <div class="input-container">
 
-
-    
+        <label>Name: </label><input type="text" name="name" placeholder="" required>
+      
+      </div>
+<div class="line"></div>
+      <div class="input-container">
+        <label>Email: </label> <input type="text" name="email" placeholder="" required>
+        
+      </div>
+<div class="line"></div>
+      <label>Message: </label>
+      <div class="msg-container">
+        <textarea rows = "10" name="message" placeholder="" required></textarea>
+      </div>
+      <div class="submit-container">
+        <button type="submit">Send</button>
+      </div>
+    </form>
+ 
    </section>
 
+   <div class="end"></div>
+   <footer>Site and Design by Cyrus B Kurtz ©2020</footer>
  
   </body>
 </html>
