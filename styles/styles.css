@@ -44,6 +44,28 @@
   }
 }
 
+@-webkit-keyframes glow-hover-filter {
+  0% {
+    -webkit-filter: none;
+            filter: none;
+  }
+  100% {
+    -webkit-filter: drop-shadow(0px 0px 1rem rgba(255, 255, 255, 0.5));
+            filter: drop-shadow(0px 0px 1rem rgba(255, 255, 255, 0.5));
+  }
+}
+
+@keyframes glow-hover-filter {
+  0% {
+    -webkit-filter: none;
+            filter: none;
+  }
+  100% {
+    -webkit-filter: drop-shadow(0px 0px 1rem rgba(255, 255, 255, 0.5));
+            filter: drop-shadow(0px 0px 1rem rgba(255, 255, 255, 0.5));
+  }
+}
+
 @-webkit-keyframes name-in {
   0% {
     opacity: 0;
@@ -287,6 +309,17 @@
   }
 }
 
+@keyframes glow-hover-filter {
+  0% {
+    -webkit-filter: none;
+            filter: none;
+  }
+  100% {
+    -webkit-filter: drop-shadow(0px 0px 1rem rgba(255, 255, 255, 0.5));
+            filter: drop-shadow(0px 0px 1rem rgba(255, 255, 255, 0.5));
+  }
+}
+
 @keyframes name-in {
   0% {
     opacity: 0;
@@ -325,6 +358,17 @@
   }
   100% {
     text-shadow: 0px 0px 20px white;
+  }
+}
+
+@keyframes glow-hover-filter {
+  0% {
+    -webkit-filter: none;
+            filter: none;
+  }
+  100% {
+    -webkit-filter: drop-shadow(0px 0px 1rem rgba(255, 255, 255, 0.5));
+            filter: drop-shadow(0px 0px 1rem rgba(255, 255, 255, 0.5));
   }
 }
 
@@ -446,6 +490,17 @@ nav li:hover {
   }
   100% {
     text-shadow: 0px 0px 20px white;
+  }
+}
+
+@keyframes glow-hover-filter {
+  0% {
+    -webkit-filter: none;
+            filter: none;
+  }
+  100% {
+    -webkit-filter: drop-shadow(0px 0px 1rem rgba(255, 255, 255, 0.5));
+            filter: drop-shadow(0px 0px 1rem rgba(255, 255, 255, 0.5));
   }
 }
 
@@ -619,6 +674,17 @@ section.about hr {
   }
   100% {
     text-shadow: 0px 0px 20px white;
+  }
+}
+
+@keyframes glow-hover-filter {
+  0% {
+    -webkit-filter: none;
+            filter: none;
+  }
+  100% {
+    -webkit-filter: drop-shadow(0px 0px 1rem rgba(255, 255, 255, 0.5));
+            filter: drop-shadow(0px 0px 1rem rgba(255, 255, 255, 0.5));
   }
 }
 
@@ -803,6 +869,17 @@ div.skill:nth-of-type(3) li::after {
   }
 }
 
+@keyframes glow-hover-filter {
+  0% {
+    -webkit-filter: none;
+            filter: none;
+  }
+  100% {
+    -webkit-filter: drop-shadow(0px 0px 1rem rgba(255, 255, 255, 0.5));
+            filter: drop-shadow(0px 0px 1rem rgba(255, 255, 255, 0.5));
+  }
+}
+
 @keyframes name-in {
   0% {
     opacity: 0;
@@ -901,6 +978,17 @@ div.headline-contact {
   }
 }
 
+@keyframes glow-hover-filter {
+  0% {
+    -webkit-filter: none;
+            filter: none;
+  }
+  100% {
+    -webkit-filter: drop-shadow(0px 0px 1rem rgba(255, 255, 255, 0.5));
+            filter: drop-shadow(0px 0px 1rem rgba(255, 255, 255, 0.5));
+  }
+}
+
 @keyframes name-in {
   0% {
     opacity: 0;
@@ -936,9 +1024,26 @@ section.portfolio {
       flex-wrap: wrap;
 }
 
+.port-link {
+  color: white;
+  text-decoration: underline;
+  -webkit-transition: color 300ms;
+  transition: color 300ms;
+}
+
+.port-link:hover {
+  color: #ffa800;
+}
+
 .port-item {
   margin: 1rem;
-  display: inline-block;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   border: 1px solid rgba(255, 255, 255, 0.5);
   padding: 1rem;
 }
@@ -952,17 +1057,27 @@ section.portfolio {
 
 .port-item .port-text {
   line-height: 140%;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
   color: white;
   padding: 1rem;
   margin-top: 1rem;
   border: 1px solid rgba(255, 255, 255, 0.5);
   width: var(--port-width);
+  position: relative;
+}
+
+.port-item .port-text .tech {
+  margin: 1rem auto;
+  font-size: 0.75em;
+  text-transform: uppercase;
 }
 
 .port-item .port-text .port-text-name {
   font-weight: 500;
   font-size: 1.5em;
-  margin-bottom: 1rem;
+  margin-bottom: 1.5rem;
 }
 
 .port-item .port-text .port-text-desc {
@@ -970,14 +1085,15 @@ section.portfolio {
 }
 
 .port-item .port-text .link-container {
+  position: absolute;
+  right: 0.25rem;
+  bottom: 0.25rem;
   text-align: right;
 }
 
 .port-item .port-text .link-container a {
-  -webkit-transition: -webkit-filter 0.7s;
-  transition: -webkit-filter 0.7s;
-  transition: filter 0.7s;
-  transition: filter 0.7s, -webkit-filter 0.7s;
+  -webkit-transition: all 0.7s;
+  transition: all 0.7s;
 }
 
 .port-item .port-text .link-container a:hover {
@@ -985,8 +1101,15 @@ section.portfolio {
           filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.8));
 }
 
+.port-item .port-text .link-container a:hover img {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+}
+
 .port-item .port-text .link-container img {
-  height: 2rem;
+  -webkit-transition: all 0.7s;
+  transition: all 0.7s;
+  height: 1.75rem;
   margin: 0 10px;
 }
 
@@ -1023,6 +1146,17 @@ section.portfolio {
   }
   100% {
     text-shadow: 0px 0px 20px white;
+  }
+}
+
+@keyframes glow-hover-filter {
+  0% {
+    -webkit-filter: none;
+            filter: none;
+  }
+  100% {
+    -webkit-filter: drop-shadow(0px 0px 1rem rgba(255, 255, 255, 0.5));
+            filter: drop-shadow(0px 0px 1rem rgba(255, 255, 255, 0.5));
   }
 }
 
@@ -1145,6 +1279,51 @@ section.portfolio {
 .form-container button:hover::after {
   -webkit-transform: scale(1.2);
           transform: scale(1.2);
+}
+
+.soc-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 100%;
+}
+
+.soc-container svg {
+  height: 5rem;
+  margin: 0 3rem;
+  -webkit-transition: -webkit-transform 0.5s ease-in-out;
+  transition: -webkit-transform 0.5s ease-in-out;
+  transition: transform 0.5s ease-in-out;
+  transition: transform 0.5s ease-in-out, -webkit-transform 0.5s ease-in-out;
+}
+
+@media screen and (max-width: 600px) {
+  .soc-container svg {
+    height: 3.5rem;
+    margin: 1.5rem;
+  }
+}
+
+.soc-container svg:hover {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+  -webkit-animation: glow-hover-filter 1s ease-in-out infinite alternate;
+          animation: glow-hover-filter 1s ease-in-out infinite alternate;
+}
+
+.soc-container .fa-envelope-square path {
+  fill: #c95253;
+}
+
+.soc-container .fa-github path {
+  fill: #cc4f87;
+}
+
+.soc-container .fa-linkedin path {
+  fill: #ae2c9a;
 }
 
 .line {

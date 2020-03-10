@@ -1,4 +1,5 @@
 @import 'util';
+
 .contact {
 	margin: 5vh auto;
 
@@ -77,6 +78,40 @@
 		}
 		&:hover::after {
 			transform: scale(1.2);
+		}
+	}
+}
+.soc-container {
+	display: flex;
+	justify-content: center;
+	width: 100%;
+
+	svg {
+		@media screen and (max-width: 600px) {
+			height: 3.5rem;
+			margin: 1.5rem;
+		}
+		height: 5rem;
+		margin: 0 3rem;
+		transition: transform 0.5s ease-in-out;
+		&:hover {
+			transform: scale(1.1);
+			animation: glow-hover-filter 1s ease-in-out infinite alternate;
+		}
+	}
+	.fa-envelope-square {
+		path {
+			fill: $stop1;
+		}
+	}
+	.fa-github {
+		path {
+			fill: $pink;
+		}
+	}
+	.fa-linkedin {
+		path {
+			fill: $stop2;
 		}
 	}
 }

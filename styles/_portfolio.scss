@@ -14,10 +14,18 @@ section.portfolio {
 	justify-content: center;
 	flex-wrap: wrap;
 }
-
+.port-link {
+	color: white;
+	text-decoration: underline;
+	transition: color 300ms;
+	&:hover {
+		color: $orange;
+	}
+}
 .port-item {
 	margin: 1rem;
-	display: inline-block;
+	display: inline-flex;
+	flex-direction: column;
 	border: 1px solid rgba(white, 0.5);
 	padding: 1rem;
 
@@ -30,33 +38,47 @@ section.portfolio {
 
 	.port-text {
 		line-height: 140%;
-
-		.port-text-name {
-			font-weight: 500;
-			font-size: 1.5em;
-			margin-bottom: 1rem;
-		}
-		.port-text-desc {
-			font-size: var(--port-text);
-		}
-		.link-container {
-			text-align: right;
-			a {
-				transition: filter 0.7s;
-			}
-			a:hover {
-				filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.8));
-			}
-			img {
-				height: 2rem;
-				margin: 0 10px;
-			}
-		}
+		flex-grow: 1;
 		color: white;
 		padding: 1rem;
 		margin-top: 1rem;
 		border: 1px solid rgba(white, 0.5);
 		width: var(--port-width);
+		position: relative;
+
+		.tech {
+			margin: 1rem auto;
+			font-size: 0.75em;
+			text-transform: uppercase;
+		}
+		.port-text-name {
+			font-weight: 500;
+			font-size: 1.5em;
+			margin-bottom: 1.5rem;
+		}
+		.port-text-desc {
+			font-size: var(--port-text);
+		}
+		.link-container {
+			position: absolute;
+			right: 0.25rem;
+			bottom: 0.25rem;
+			text-align: right;
+			a {
+				transition: all 0.7s;
+			}
+			a:hover {
+				filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.8));
+				img {
+					transform: scale(1.1);
+				}
+			}
+			img {
+				transition: all 0.7s;
+				height: 1.75rem;
+				margin: 0 10px;
+			}
+		}
 	}
 }
 
